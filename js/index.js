@@ -102,4 +102,8 @@ const newText = document.createElement("p");
 newText.textContent = "EUREKA!"
 nav.prepend(newText);
 
-newText.style.font = ""
+newText.style.fontFamily = "Bangers"
+newText.style.fontSize = "30px"
+
+nav.style.alignItems = "center";
+
