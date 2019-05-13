@@ -60,7 +60,7 @@ let navItems = document.querySelectorAll("nav a");
 
 navItems.forEach((each,i) => {
   each.textContent = siteContent["nav"][`nav-item-${i+1}`];
-  each.style.color = "lightblue"
+  each.style.color = "green"
 });
 
 
@@ -95,6 +95,7 @@ newLink.href = "#"
 const nav = document.querySelector("nav");
 
 newLink.textContent = "Careers";
+newLink.style.color = "Red"
 
 nav.appendChild(newLink);
 
