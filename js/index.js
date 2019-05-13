@@ -44,33 +44,39 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 // let logo = document.getElementById("logo-img");
 // logo.setAttribute('src', "img/logo.png");
 
-let content_image = document.getElementById("cta-img");
-content_image.setAttribute("src", siteContent["cta"]["img-src"]);
+let contentImage = document.getElementById("cta-img");
+contentImage.setAttribute("src", siteContent["cta"]["img-src"]);
 
-let middle_image = document.getElementById("middle-img");
-middle_image.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+let middleImage = document.getElementById("middle-img");
+middleImage.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
-let nav_items = document.querySelectorAll("nav a");
-nav_items[0].textContent = "Services";
-nav_items[1].textContent = "Product";
-nav_items[2].textContent ="Vision";
-nav_items[3].textContent = "Features";
-nav_items[4].textContent ="About";
-nav_items[5].textContent ="Contact";
+let navItems = document.querySelectorAll("nav a");
+// nav_items[0].textContent = siteContent["nav"]["nav-item-1"]
+// nav_items[1].textContent = "Product";
+// nav_items[2].textContent ="Vision";
+// nav_items[3].textContent = "Features";
+// nav_items[4].textContent ="About";
+// nav_items[5].textContent ="Contact";
 
-let header_text = document.querySelector("h1");
-header_text.textContent = "DOM Is Awesome"
+navItems.forEach((each,i) => {
+  each.textContent = siteContent["nav"][`nav-item-${i+1}`];
+  each.style.color = "lightblue"
+});
+
+
+let headerText = document.querySelector("h1");
+headerText.textContent = "DOM Is Awesome"
 
 let button = document.querySelector("button");
 button.textContent =  "Get Started"
 
-let content_headers = document.querySelectorAll("h4");
-content_headers[0].textContent = "Features";
-content_headers[1].textContent = "About";
-content_headers[2].textContent = "Services";
-content_headers[3].textContent = "Products";
-content_headers[4].textContent = "Vision";
-content_headers[5].textContent = "Contact";
+let contentHeaders = document.querySelectorAll("h4");
+contentHeaders[0].textContent = "Features";
+contentHeaders[1].textContent = "About";
+contentHeaders[2].textContent = "Services";
+contentHeaders[3].textContent = "Products";
+contentHeaders[4].textContent = "Vision";
+contentHeaders[5].textContent = "Contact";
 
 let paragraphs = document.querySelectorAll("p");
 paragraphs[0].textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
@@ -82,3 +88,18 @@ paragraphs[5].textContent = "123 Way 456 Street Somewhere, USA";
 paragraphs[6].textContent = "1 (888) 888-8888";
 paragraphs[7].textContent = "sales@greatidea.io";
 paragraphs[8].textContent = "Copyright Great Idea! 2018";
+
+const newLink = document.createElement("a");
+newLink.href = "#"
+
+const nav = document.querySelector("nav");
+
+newLink.textContent = "Careers";
+
+nav.appendChild(newLink);
+
+const newText = document.createElement("p");
+newText.textContent = "EUREKA!"
+nav.prepend(newText);
+
+newText.style.font = ""
